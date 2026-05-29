@@ -30,6 +30,25 @@ Or use the launcher script:
 ./scripts/launch.sh
 ```
 
+## Docker / Podman
+
+Build and run the container (nginx, non-root, plain HTTP on 8420):
+
+```sh
+docker compose up -d --build
+```
+
+Then open `http://localhost:8420`. The container serves plain HTTP and is meant to
+sit behind a TLS-terminating proxy (e.g. cloudflared); the proxy's HTTPS hostname
+provides the secure context Web Serial / Web Bluetooth need.
+
+The build file is named `Containerfile` (the OCI/Podman standard). `docker compose`
+picks it up automatically. For a raw build, name it explicitly:
+
+```sh
+docker build -f Containerfile -t meshconfig .
+```
+
 ## systemd
 
 A sample systemd unit is included at systemd/meshconfig.service.

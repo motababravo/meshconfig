@@ -1,0 +1,16 @@
+# Don't need this stuff in the image.
+.git
+.gitignore
+scripts/
+systemd/
+*.md
+LICENSE
+Containerfile
+compose.yml
+.dockerignore
+
+# Editor / OS cruft
+.vscode/
+.idea/
+*.swp
+.DS_Store
