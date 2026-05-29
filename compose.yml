@@ -4,7 +4,6 @@ services:
       context: .
       dockerfile: Containerfile
     image: meshconfig:latest
-    container_name: meshconfig
 
     ports:
       - "127.0.0.1:8420:8080"
